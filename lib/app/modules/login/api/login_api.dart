@@ -5,7 +5,6 @@ import '../../../../repository/login/login_repo.dart';
 class AuthApi extends BaseApiImp implements BaseLogin {
   @override
   Future<String?> forgotPassword(String email) {
-    // TODO: implement forgotPassword
     throw UnimplementedError();
   }
 
