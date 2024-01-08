@@ -29,22 +29,22 @@ class HomeView extends GetView<HomeController> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            TextField(
-              textAlign: TextAlign.center,
-              keyboardType: TextInputType.text,
-              decoration: InputDecoration(
-                hintText: 'Enter a product name eg. pension',
-                hintStyle: const TextStyle(fontSize: 16),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8),
-                  borderSide: const BorderSide(
-                    width: 4,
-                    color: Colors.amber,
-                    style: BorderStyle.solid,
-                  ),
-                ),
-                filled: true,
-                contentPadding: const EdgeInsets.all(16),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide(color: Colors.grey.withOpacity(0.4), width: 1)),
+                    contentPadding: EdgeInsets.symmetric(horizontal: 8),
+                    hintText: "Search",
+                    suffixIcon: const Icon(
+                      Icons.search,
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide(color: Colors.grey.withOpacity(0.4), width: 1)),
+                    suffixStyle: const TextStyle(color: Colors.green)),
               ),
             ),
             CarouselSlider(
@@ -71,7 +71,10 @@ class HomeView extends GetView<HomeController> {
                 children: List.generate(
                     4,
                     (index) => Container(
-                          decoration: BoxDecoration(border: Border.all(color: Colors.grey.withOpacity(0.4)),borderRadius: BorderRadius.circular(8), color: AppColors.cardWhite),
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey.withOpacity(0.4)),
+                              borderRadius: BorderRadius.circular(8),
+                              color: AppColors.cardWhite),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Column(
@@ -96,29 +99,40 @@ class HomeView extends GetView<HomeController> {
                                               height: 30,
                                               fit: BoxFit.cover,
                                             )),
-                                        const SizedBox(width: 8,),
+                                        const SizedBox(
+                                          width: 8,
+                                        ),
                                         const Column(
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
                                             Text("Martina D"),
                                             Text(
                                               "Martina D",
-                                              style: TextStyle(color: Colors.amber,fontSize: 10),
+                                              style: TextStyle(color: Colors.amber, fontSize: 10),
                                             ),
                                           ],
                                         )
                                       ],
                                     ),
-                                    const SizedBox(width: 160,),
+                                    const SizedBox(
+                                      width: 160,
+                                    ),
                                     const Icon(Icons.favorite_border)
                                   ],
                                 ),
-                                SizedBox(height: 8,),
-                                Row(
+                                const SizedBox(
+                                  height: 8,
+                                ),
+                                const Row(
                                   children: [
-                                    const Text("From"),
-                                    SizedBox(width: 8,),
-                                    const Text("50 AED",style: TextStyle(fontWeight: FontWeight.bold),),
+                                    Text("From"),
+                                    SizedBox(
+                                      width: 8,
+                                    ),
+                                    Text(
+                                      "50 AED",
+                                      style: TextStyle(fontWeight: FontWeight.bold),
+                                    ),
                                   ],
                                 )
                               ],
