@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:get/get.dart';
+import 'package:wizer/app/modules/login/views/login_view.dart';
 import 'package:wizer/core/components/extentions/sizedbox.ext.dart';
 import 'package:wizer/core/theme/app_assets.dart';
 
@@ -73,9 +74,14 @@ class OnboardingView extends GetView<OnboardingController> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "Login",
-                style: TextStyle(color: Colors.white),
+              InkWell(
+                onTap: () {
+                  Get.to(LoginView());
+                },
+                child: Text(
+                  "Login",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
               Text(
                 "Skip",

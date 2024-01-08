@@ -1,4 +1,8 @@
 import 'package:get/get.dart';
+import 'package:wizer/app/modules/forgot_password/bindings/forgot_password_binding.dart';
+import 'package:wizer/app/modules/forgot_password/views/forgot_password_view.dart';
+import 'package:wizer/app/modules/signup/bindings/signup_binding.dart';
+import 'package:wizer/app/modules/signup/views/signup_view.dart';
 
 import '../modules/dashboard/bindings/dashboard_binding.dart';
 import '../modules/dashboard/views/dashboard_view.dart';
@@ -41,6 +45,11 @@ class AppPages {
       binding: LoginBinding(),
     ),
     GetPage(
+      name: _Paths.SIGNUP,
+      page: () => const SignUpView(),
+      binding: SignUpBinding(),
+    ),
+    GetPage(
       name: _Paths.OTP,
       page: () => const OtpView(),
       binding: OtpBinding(),
@@ -64,6 +73,11 @@ class AppPages {
       name: _Paths.ONBOARDING,
       page: () => const OnboardingView(),
       binding: OnboardingBinding(),
+    ),
+    GetPage(
+      name: _Paths.FORGOT_PASSWORD,
+      page: () => const ForgotPasswordView(),
+      binding: ForgotPasswordBinding(),
     ),
   ];
 }

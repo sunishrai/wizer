@@ -1,10 +1,7 @@
 import 'package:get/get.dart';
-import 'package:otp_text_field/otp_field.dart';
 
-class OtpController extends GetxController {
+class ForgotPasswordController extends GetxController {
   //TODO: Implement OtpController
-  OtpFieldController otpController = OtpFieldController();
-
   final count = 0.obs;
   @override
   void onInit() {
