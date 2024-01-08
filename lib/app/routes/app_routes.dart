@@ -11,6 +11,9 @@ abstract class Routes {
   static const PROFILE = _Paths.PROFILE;
   static const INTRO = _Paths.INTRO;
   static const ONBOARDING = _Paths.ONBOARDING;
+  static const SEARCH = _Paths.SEARCH;
+  static const MAIL = _Paths.MAIL;
+  static const BOOKMARK = _Paths.BOOKMARK;
 }
 
 abstract class _Paths {
@@ -23,4 +26,7 @@ abstract class _Paths {
   static const PROFILE = '/profile';
   static const INTRO = '/intro';
   static const ONBOARDING = '/onboarding';
+  static const SEARCH = '/search';
+  static const MAIL = '/mail';
+  static const BOOKMARK = '/bookmark';
 }
