@@ -15,46 +15,46 @@ class DashboardView extends GetView<DashboardController> {
               showSelectedLabels: false, //selected item
               showUnselectedLabels: false, //unselected item
               currentIndex: controller.index.value,
-              unselectedIconTheme: IconThemeData(color: Colors.grey),
+              unselectedIconTheme: const IconThemeData(color: Colors.grey),
               items: [
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.home_filled),
+                    icon: const Icon(Icons.home_filled),
                     activeIcon: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                         decoration: BoxDecoration(borderRadius: BorderRadius.circular(36), color: AppColors.primary),
-                        child: Icon(Icons.home_filled)),
+                        child: const Icon(Icons.home_filled)),
                     label: ""),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.mail),
+                  icon: const Icon(Icons.mail),
                   label: "",
                   activeIcon: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(36), color: AppColors.primary),
-                      child: Icon(Icons.mail)),
+                      child: const Icon(Icons.mail)),
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.search),
+                  icon: const Icon(Icons.search),
                   label: "",
                   activeIcon: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(36), color: AppColors.primary),
-                      child: Icon(Icons.search)),
+                      child: const Icon(Icons.search)),
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.bookmark),
+                  icon: const Icon(Icons.bookmark),
                   label: "",
                   activeIcon: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(36), color: AppColors.primary),
-                      child: Icon(Icons.bookmark)),
+                      child: const Icon(Icons.bookmark)),
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.person),
+                  icon: const Icon(Icons.person),
                   label: "",
                   activeIcon: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(36), color: AppColors.primary),
-                      child: Icon(Icons.person)),
+                      child: const Icon(Icons.person)),
                 ),
               ],
             )),
