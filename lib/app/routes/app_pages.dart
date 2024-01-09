@@ -10,6 +10,8 @@ import '../modules/intro/bindings/intro_binding.dart';
 import '../modules/intro/views/intro_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/logoDesignList/bindings/logo_design_list_binding.dart';
+import '../modules/logoDesignList/views/logo_design_list_view.dart';
 import '../modules/mail/bindings/mail_binding.dart';
 import '../modules/mail/views/mail_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
@@ -30,7 +32,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.DASHBOARD;
+  static const INITIAL = Routes.LOGO_DESIGN_LIST;
 
   static final routes = [
     GetPage(
@@ -92,6 +94,11 @@ class AppPages {
       name: _Paths.SUBCATEGORY,
       page: () => const SubcategoryView(),
       binding: SubcategoryBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOGO_DESIGN_LIST,
+      page: () => const LogoDesignListView(),
+      binding: LogoDesignListBinding(),
     ),
   ];
 }

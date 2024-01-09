@@ -15,6 +15,7 @@ abstract class Routes {
   static const MAIL = _Paths.MAIL;
   static const BOOKMARK = _Paths.BOOKMARK;
   static const SUBCATEGORY = _Paths.SUBCATEGORY;
+  static const LOGO_DESIGN_LIST = _Paths.LOGO_DESIGN_LIST;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const MAIL = '/mail';
   static const BOOKMARK = '/bookmark';
   static const SUBCATEGORY = '/subcategory';
+  static const LOGO_DESIGN_LIST = '/logo-design-list';
 }
