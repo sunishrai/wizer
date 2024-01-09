@@ -1,9 +1,7 @@
 import 'package:get/get.dart';
-import 'package:otp_text_field/otp_field.dart';
 
-class OtpController extends GetxController {
-  //TODO: Implement OtpController
-  OtpFieldController otpController = OtpFieldController();
+class SignupController extends GetxController {
+  //TODO: Implement LoginController
 
   final count = 0.obs;
   @override
