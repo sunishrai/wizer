@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,83 +8,95 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeScreen(),
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: MyHomePage(),
     );
   }
 }
 
-class HomeScreen extends StatelessWidget {
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Your App'),
-        // Add more AppBar properties as needed
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            // "What's new" carousel
-            CarouselSlider(
-              items: [
-                Image.asset(
-                    "https://www.shutterstock.com/image-illustration/pristine-reflective-lake-show-image-260nw-2305485315.jpg")
-                // Add Image.network or Image.asset widgets for each item
-              ],
-              options: CarouselOptions(
-                height: 200.0,
-                enlargeCenterPage: true,
-                autoPlay: true,
-                aspectRatio: 16 / 9,
-                autoPlayCurve: Curves.fastOutSlowIn,
-                enableInfiniteScroll: true,
-                autoPlayAnimationDuration: Duration(milliseconds: 800),
-                viewportFraction: 0.8,
-              ),
-            ),
-
-            // "Featured Providers" section
-            SectionTitle(title: 'Featured Providers'),
-            // Use ListView.builder or another appropriate widget
-
-            // "Popular Services" section
-            SectionTitle(title: 'Popular Services'),
-            // Use GridView.builder or another appropriate widget
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class SectionTitle extends StatelessWidget {
-  final String title;
-
-  SectionTitle({required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            title,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
+        elevation: 0, // Removes the shadow under the app bar
+        backgroundColor: Colors.transparent, // Makes the app bar transparent
+        iconTheme: IconThemeData(color: Colors.black), // Changes the app bar icon color
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {},
           ),
-          TextButton(
-            onPressed: () {
-              // Navigate to 'See All' screen
-            },
-            child: Text(
-              'See All',
-              style: TextStyle(
-                color: Theme.of(context).primaryColor,
-              ),
+        ],
+      ),
+      body: Column(
+        children: <Widget>[
+          SizedBox(height: 20),
+          CircleAvatar(
+            radius: 40,
+            child: Icon(Icons.person, size: 40),
+            backgroundColor: Colors.grey.shade300,
+          ),
+          SizedBox(height: 8),
+          Text('Guest', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+          Text('Welcome to Wizer', style: TextStyle(fontSize: 16)),
+          SizedBox(height: 20),
+          Expanded(
+            child: ListView(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text('My Wizer', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                ),
+                ListTile(
+                  leading: Icon(Icons.add_circle_outline),
+                  title: Text('Join Wizer'),
+                  trailing: Icon(Icons.chevron_right),
+                  onTap: () {},
+                ),
+                ListTile(
+                  leading: Icon(Icons.arrow_forward_ios),
+                  title: Text('Sign in'),
+                  trailing: Icon(Icons.chevron_right),
+                  onTap: () {},
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text('General', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                ),
+                ListTile(
+                  leading: Icon(Icons.language),
+                  title: Text('Language'),
+                  trailing: Text('English'),
+                  onTap: () {},
+                ),
+                ListTile(
+                  leading: Icon(Icons.money),
+                  title: Text('Currency'),
+                  trailing: Text('AED'),
+                  onTap: () {},
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text('Resources', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                ),
+                ListTile(
+                  leading: Icon(Icons.help_outline),
+                  title: Text('Support'),
+                  trailing: Icon(Icons.chevron_right),
+                  onTap: () {},
+                ),
+                ListTile(
+                  leading: Icon(Icons.account_balance_wallet_outlined),
+                  title: Text('Community and legal'),
+                  trailing: Icon(Icons.chevron_right),
+                  onTap: () {},
+                ),
+              ],
             ),
           ),
         ],

@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:wizer/app/modules/home/views/widgets/section_view.dart';
 import 'package:wizer/core/theme/app_assets.dart';
 import 'package:wizer/core/theme/app_colors.dart';
 
@@ -71,23 +72,26 @@ class HomeView extends GetView<HomeController> {
                 children: List.generate(
                     4,
                     (index) => Container(
+                          // padding: const EdgeInsets.all(8.0),
+                          margin: const EdgeInsets.all(8.0),
+
                           decoration: BoxDecoration(
                               border: Border.all(color: Colors.grey.withOpacity(0.4)),
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(16),
                               color: AppColors.cardWhite),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(4),
-                                  child: Image.network(
-                                    "https://img.freepik.com/free-photo/space-background-realistic-starry-night-cosmos-shining-stars-milky-way-stardust-color-galaxy_1258-154643.jpg",
-                                    height: 200,
-                                  ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.circular(16),
+                                child: Image.network(
+                                  "https://img.freepik.com/free-photo/space-background-realistic-starry-night-cosmos-shining-stars-milky-way-stardust-color-galaxy_1258-154643.jpg",
+                                  height: 200,
                                 ),
-                                Row(
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
                                   children: [
                                     Row(
                                       children: [
@@ -120,10 +124,10 @@ class HomeView extends GetView<HomeController> {
                                     const Icon(Icons.favorite_border)
                                   ],
                                 ),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                const Row(
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: const Row(
                                   children: [
                                     Text("From"),
                                     SizedBox(
@@ -133,15 +137,55 @@ class HomeView extends GetView<HomeController> {
                                       "50 AED",
                                       style: TextStyle(fontWeight: FontWeight.bold),
                                     ),
+                                    const SizedBox(
+                                      width: 90,
+                                    ),
+                                    Text("(5.5728)  "),
+                                    Text(
+                                      '5.9',
+                                      style: TextStyle(color: Colors.yellow),
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Colors.yellow,
+                                    )
                                   ],
-                                )
-                              ],
-                            ),
+                                ),
+                              )
+                            ],
                           ),
                         )),
               ),
             ),
             SectionTitle(title: 'Featured Providers'),
+            SizedBox(
+              height: 170,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                  itemBuilder: (_, i) => Container(
+                        margin: const EdgeInsets.all(8.0),
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey.withOpacity(0.4)),
+                            borderRadius: BorderRadius.circular(16),
+                            color: AppColors.cardWhite),
+                        child: Column(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.only(topLeft: Radius.circular(16),topRight: Radius.circular(16)),
+                              child: Image.network(
+                                "https://img.freepik.com/free-photo/space-background-realistic-starry-night-cosmos-shining-stars-milky-way-stardust-color-galaxy_1258-154643.jpg",
+                                height: 120,
+                                fit: BoxFit.cover,
+                                width: 120,
+                              ),
+                            ),
+                            SizedBox(height: 5,),
+                            Text("Interior")
+                          ],
+                        ),
+                      )),
+            )
           ],
         ),
       ),
