@@ -86,7 +86,7 @@ class LogoDesignListView extends GetView<LogoDesignListController> {
                                   style: TextStyle(fontWeight: FontWeight.bold),
                                 ),
                                 SizedBox(
-                                  width: 70,
+                                  width: 40,
                                 ),
                                 Text("(5.5728)  "),
                                 Text(

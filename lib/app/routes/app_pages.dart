@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:wizer/app/modules/recentlyViewed/bindings/recently_viewed_binding.dart';
+import 'package:wizer/app/modules/recentlyViewed/views/recently_viewed_view.dart';
 
 import '../modules/bookmark/bindings/bookmark_binding.dart';
 import '../modules/bookmark/views/bookmark_view.dart';
@@ -32,7 +34,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.LOGO_DESIGN_LIST;
+  static const INITIAL = Routes.SPLASH;
 
   static final routes = [
     GetPage(
@@ -99,6 +101,11 @@ class AppPages {
       name: _Paths.LOGO_DESIGN_LIST,
       page: () => const LogoDesignListView(),
       binding: LogoDesignListBinding(),
+    ),
+    GetPage(
+      name: _Paths.RECENTLY_VIEWED,
+      page: () => const RecentlyViewedView(),
+      binding: RecentlyViewedBinding(),
     ),
   ];
 }

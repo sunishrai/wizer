@@ -16,6 +16,7 @@ abstract class Routes {
   static const BOOKMARK = _Paths.BOOKMARK;
   static const SUBCATEGORY = _Paths.SUBCATEGORY;
   static const LOGO_DESIGN_LIST = _Paths.LOGO_DESIGN_LIST;
+  static const RECENTLY_VIEWED = _Paths.RECENTLY_VIEWED;
 }
 
 abstract class _Paths {
@@ -33,4 +34,5 @@ abstract class _Paths {
   static const BOOKMARK = '/bookmark';
   static const SUBCATEGORY = '/subcategory';
   static const LOGO_DESIGN_LIST = '/logo-design-list';
+  static const RECENTLY_VIEWED = '/recently-viewed';
 }

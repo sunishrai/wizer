@@ -9,8 +9,10 @@ import '../controllers/intro_controller.dart';
 
 class IntroView extends GetView<IntroController> {
   const IntroView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    Get.lazyPut(()=>IntroController());
     return Scaffold(
         body: Stack(
       children: [
