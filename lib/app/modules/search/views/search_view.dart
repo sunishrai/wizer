@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:wizer/app/routes/app_pages.dart';
 
 import '../controllers/search_controller.dart';
 
@@ -37,21 +38,24 @@ class SearchView extends GetView<SearchPageController> {
           SizedBox(
             height: 4,
           ),
-          Row(
-            children: [
-              CircleAvatar(radius: 24,child: Icon(Icons.abc)),
-              SizedBox(width: 8,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Fitness"),
-                  Text(
-                    "Diet Maintaning",
-                    style: TextStyle(fontSize: 10, color: Colors.grey),
-                  )
-                ],
-              )
-            ],
+          InkWell(
+            onTap: (){Get.toNamed(Routes.SUBCATEGORY);},
+            child: Row(
+              children: [
+                CircleAvatar(radius: 24,child: Icon(Icons.abc)),
+                SizedBox(width: 8,),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Fitness"),
+                    Text(
+                      "Diet Maintaning",
+                      style: TextStyle(fontSize: 10, color: Colors.grey),
+                    )
+                  ],
+                )
+              ],
+            ),
           )
         ],
       ),

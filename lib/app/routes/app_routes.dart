@@ -14,6 +14,7 @@ abstract class Routes {
   static const SEARCH = _Paths.SEARCH;
   static const MAIL = _Paths.MAIL;
   static const BOOKMARK = _Paths.BOOKMARK;
+  static const SUBCATEGORY = _Paths.SUBCATEGORY;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const SEARCH = '/search';
   static const MAIL = '/mail';
   static const BOOKMARK = '/bookmark';
+  static const SUBCATEGORY = '/subcategory';
 }

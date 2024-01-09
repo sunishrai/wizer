@@ -22,6 +22,8 @@ import '../modules/search/bindings/search_binding.dart';
 import '../modules/search/views/search_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
+import '../modules/subcategory/bindings/subcategory_binding.dart';
+import '../modules/subcategory/views/subcategory_view.dart';
 
 part 'app_routes.dart';
 
@@ -85,6 +87,11 @@ class AppPages {
       name: _Paths.BOOKMARK,
       page: () => const BookmarkView(),
       binding: BookmarkBinding(),
+    ),
+    GetPage(
+      name: _Paths.SUBCATEGORY,
+      page: () => const SubcategoryView(),
+      binding: SubcategoryBinding(),
     ),
   ];
 }
