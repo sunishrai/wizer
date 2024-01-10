@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:wizer/app/modules/recentlyViewed/views/recently_viewed_view.dart';
 
 class SectionTitle extends StatelessWidget {
   final String title;
@@ -21,7 +23,7 @@ class SectionTitle extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              // Navigate to 'See All' screen
+              Get.to(RecentlyViewedView());
             },
             child: Text(
               'See All',

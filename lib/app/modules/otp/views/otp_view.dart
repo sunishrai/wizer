@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
+import 'package:wizer/app/modules/dashboard/views/dashboard_view.dart';
 
 import '../controllers/otp_controller.dart';
 
@@ -92,7 +93,7 @@ class OtpView extends GetView<OtpController> {
               height: 46,
               width: double.infinity,
               child: TextButton(
-                onPressed: null,
+                onPressed: () {Get.to(DashboardView());},
                 style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(

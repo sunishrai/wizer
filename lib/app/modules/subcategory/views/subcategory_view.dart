@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:wizer/app/modules/logoDesignList/views/logo_design_list_view.dart';
 
 import '../controllers/subcategory_controller.dart';
 
@@ -84,7 +85,9 @@ List<Widget> buildCategorySection(String title, List<String> items) {
     ),
     ...items.map(
           (item) => ListTile(
-        title: Text(item),
+        title: InkWell(
+            onTap: (){Get.to(LogoDesignListView());},
+            child: Text(item)),
         trailing: Icon(Icons.chevron_right),
         onTap: () {
           // Handle item tap

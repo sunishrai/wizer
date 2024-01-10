@@ -9,6 +9,7 @@ class DashboardView extends GetView<DashboardController> {
   const DashboardView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    Get.lazyPut(()=>DashboardController());
     return Scaffold(
         bottomNavigationBar: Obx(() => BottomNavigationBar(
               onTap: controller.onNavChanged,
