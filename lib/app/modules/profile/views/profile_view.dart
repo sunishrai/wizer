@@ -12,75 +12,75 @@ class ProfileView extends GetView<ProfileController> {
       appBar: AppBar(
         elevation: 0, // Removes the shadow under the app bar
         backgroundColor: Colors.transparent, // Makes the app bar transparent
-        iconTheme: IconThemeData(color: Colors.black), // Changes the app bar icon color
+        iconTheme: const IconThemeData(color: Colors.black), // Changes the app bar icon color
         actions: [
           IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: () {},
           ),
         ],
       ),
       body: Column(
         children: <Widget>[
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           CircleAvatar(
             radius: 40,
-            child: Icon(Icons.person, size: 40),
+            child: const Icon(Icons.person, size: 40),
             backgroundColor: Colors.grey.shade300,
           ),
-          SizedBox(height: 8),
-          Text('Guest', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-          Text('Welcome to Wizer', style: TextStyle(fontSize: 16)),
-          SizedBox(height: 20),
+          const SizedBox(height: 8),
+          const Text('Guest', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+          const Text('Welcome to Wizer', style: TextStyle(fontSize: 16)),
+          const SizedBox(height: 20),
           Expanded(
             child: ListView(
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
+                const Padding(
+                  padding: EdgeInsets.all(16.0),
                   child: Text('My Wizer', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                 ),
                 ListTile(
-                  leading: Icon(Icons.add_circle_outline),
-                  title: Text('Join Wizer'),
-                  trailing: Icon(Icons.chevron_right),
+                  leading: const Icon(Icons.add_circle_outline),
+                  title: const Text('Join Wizer'),
+                  trailing: const Icon(Icons.chevron_right),
                   onTap: () {},
                 ),
                 ListTile(
-                  leading: Icon(Icons.arrow_forward_ios),
-                  title: Text('Sign in'),
-                  trailing: Icon(Icons.chevron_right),
+                  leading: const Icon(Icons.arrow_forward_ios),
+                  title: const Text('Sign in'),
+                  trailing: const Icon(Icons.chevron_right),
                   onTap: () {},
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Text('General', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                 ),
                 ListTile(
-                  leading: Icon(Icons.language),
-                  title: Text('Language'),
-                  trailing: Text('English'),
+                  leading: const Icon(Icons.language),
+                  title: const Text('Language'),
+                  trailing: const Text('English'),
                   onTap: () {},
                 ),
                 ListTile(
-                  leading: Icon(Icons.money),
-                  title: Text('Currency'),
-                  trailing: Text('AED'),
+                  leading: const Icon(Icons.money),
+                  title: const Text('Currency'),
+                  trailing: const Text('AED'),
                   onTap: () {},
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
+                const Padding(
+                  padding: EdgeInsets.all(16.0),
                   child: Text('Resources', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                 ),
                 ListTile(
-                  leading: Icon(Icons.help_outline),
-                  title: Text('Support'),
-                  trailing: Icon(Icons.chevron_right),
+                  leading: const Icon(Icons.help_outline),
+                  title: const Text('Support'),
+                  trailing: const Icon(Icons.chevron_right),
                   onTap: () {},
                 ),
                 ListTile(
-                  leading: Icon(Icons.account_balance_wallet_outlined),
-                  title: Text('Community and legal'),
-                  trailing: Icon(Icons.chevron_right),
+                  leading: const Icon(Icons.account_balance_wallet_outlined),
+                  title: const Text('Community and legal'),
+                  trailing: const Icon(Icons.chevron_right),
                   onTap: () {},
                 ),
               ],

@@ -16,6 +16,12 @@ abstract class Routes {
   static const BOOKMARK = _Paths.BOOKMARK;
   static const SUBCATEGORY = _Paths.SUBCATEGORY;
   static const LOGO_DESIGN_LIST = _Paths.LOGO_DESIGN_LIST;
+  static const ORDERS = _Paths.ORDERS;
+  static const CHAT = _Paths.CHAT;
+  static const CHAT_DETAILS = _Paths.CHAT_DETAILS;
+  static const PROVIDER_PROFILE = _Paths.PROVIDER + _Paths.PROVIDER_PROFILE;
+  static const PROVIDER_PAGE = _Paths.PROVIDER + _Paths.PROVIDER_PAGE;
+  static const PROVIDER_EARNING = _Paths.PROVIDER + _Paths.PROVIDER_EARNING;
 }
 
 abstract class _Paths {
@@ -33,4 +39,11 @@ abstract class _Paths {
   static const BOOKMARK = '/bookmark';
   static const SUBCATEGORY = '/subcategory';
   static const LOGO_DESIGN_LIST = '/logo-design-list';
+  static const ORDERS = '/orders';
+  static const CHAT = '/chat';
+  static const CHAT_DETAILS = '/chat-details';
+  static const PROVIDER_PROFILE = '/provider-profile';
+  static const PROVIDER = '';
+  static const PROVIDER_PAGE = '/provider-page';
+  static const PROVIDER_EARNING = '/provider-earning';
 }

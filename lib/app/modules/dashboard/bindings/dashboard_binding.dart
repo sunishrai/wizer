@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wizer/app/modules/bookmark/controllers/bookmark_controller.dart';
+import 'package:wizer/app/modules/chat/controllers/chat_controller.dart';
 import 'package:wizer/app/modules/home/controllers/home_controller.dart';
+import 'package:wizer/app/modules/orders/controllers/orders_controller.dart';
 import 'package:wizer/app/modules/profile/controllers/profile_controller.dart';
 
 import '../../search/controllers/search_controller.dart';
@@ -19,8 +21,11 @@ class DashboardBinding extends Bindings {
     Get.lazyPut<SearchPageController>(
       () => SearchPageController(),
     );
-    Get.lazyPut<BookmarkController>(
-      () => BookmarkController(),
+    Get.lazyPut<ChatController>(
+      () => ChatController(),
+    );
+    Get.lazyPut<OrdersController>(
+      () => OrdersController(),
     );
     Get.lazyPut<ProfileController>(
       () => ProfileController(),

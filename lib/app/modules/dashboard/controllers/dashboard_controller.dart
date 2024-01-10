@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wizer/app/modules/bookmark/views/bookmark_view.dart';
+import 'package:wizer/app/modules/chat/views/chat_view.dart';
 import 'package:wizer/app/modules/home/views/home_view.dart';
 import 'package:wizer/app/modules/mail/views/mail_view.dart';
+import 'package:wizer/app/modules/orders/views/orders_view.dart';
 import 'package:wizer/app/modules/profile/views/profile_view.dart';
 import 'package:wizer/app/modules/search/views/search_view.dart';
 
@@ -10,7 +12,7 @@ class DashboardController extends GetxController {
   //TODO: Implement DashboardController
 
   final index = 0.obs;
-  List<Widget> pages = [HomeView(), MailView(), SearchView(), BookmarkView(), ProfileView()];
+  List<Widget> pages = [HomeView(), ChatView(), SearchView(), OrdersView(), ProfileView()];
   @override
   void onInit() {
     super.onInit();

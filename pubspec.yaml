@@ -31,4 +31,11 @@ flutter:
     - assets/svgs/
     - assets/pngs/
 #    - assets/json/
-
+  fonts:
+    - family: Raleway
+      fonts:
+        - asset: fonts/Raleway-Regular.ttf
+        - asset: fonts/Raleway-SemiBold.ttf
+          weight: 700
+        - asset: fonts/Raleway-Italic.ttf
+          style: italic

@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:wizer/app/modules/home/views/widgets/featured_card.dart';
 import 'package:wizer/app/modules/home/views/widgets/section_view.dart';
 import 'package:wizer/core/theme/app_assets.dart';
 import 'package:wizer/core/theme/app_colors.dart';
@@ -37,7 +38,7 @@ class HomeView extends GetView<HomeController> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
                         borderSide: BorderSide(color: Colors.grey.withOpacity(0.4), width: 1)),
-                    contentPadding: EdgeInsets.symmetric(horizontal: 8),
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 8),
                     hintText: "Search",
                     suffixIcon: const Icon(
                       Icons.search,
@@ -65,7 +66,7 @@ class HomeView extends GetView<HomeController> {
                 viewportFraction: 0.8,
               ),
             ),
-            SectionTitle(title: 'Popular Services'),
+            const SectionTitle(title: 'Popular Services'),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
@@ -125,9 +126,9 @@ class HomeView extends GetView<HomeController> {
                                   ],
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: const Row(
+                              const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Row(
                                   children: [
                                     Text("From"),
                                     SizedBox(
@@ -137,7 +138,7 @@ class HomeView extends GetView<HomeController> {
                                       "50 AED",
                                       style: TextStyle(fontWeight: FontWeight.bold),
                                     ),
-                                    const SizedBox(
+                                    SizedBox(
                                       width: 90,
                                     ),
                                     Text("(5.5728)  "),
@@ -157,7 +158,8 @@ class HomeView extends GetView<HomeController> {
                         )),
               ),
             ),
-            SectionTitle(title: 'Featured Providers'),
+            const FeatureCard(),
+            const SectionTitle(title: 'Featured Providers'),
             SizedBox(
               height: 170,
               child: ListView.builder(
@@ -172,7 +174,7 @@ class HomeView extends GetView<HomeController> {
                         child: Column(
                           children: [
                             ClipRRect(
-                              borderRadius: BorderRadius.only(topLeft: Radius.circular(16),topRight: Radius.circular(16)),
+                              borderRadius: const BorderRadius.only(topLeft: Radius.circular(16),topRight: Radius.circular(16)),
                               child: Image.network(
                                 "https://img.freepik.com/free-photo/space-background-realistic-starry-night-cosmos-shining-stars-milky-way-stardust-color-galaxy_1258-154643.jpg",
                                 height: 120,
@@ -180,8 +182,8 @@ class HomeView extends GetView<HomeController> {
                                 width: 120,
                               ),
                             ),
-                            SizedBox(height: 5,),
-                            Text("Interior")
+                            const SizedBox(height: 5,),
+                            const Text("Interior")
                           ],
                         ),
                       )),
