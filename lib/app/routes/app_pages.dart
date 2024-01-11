@@ -44,7 +44,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.PROVIDER_PROFILE;
+  static const INITIAL = Routes.PROVIDER_EARNING;
 
   static final routes = [
     GetPage(

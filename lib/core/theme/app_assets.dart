@@ -17,5 +17,9 @@ class AppAssets {
   static const String slide_2PNG = '${_AppBaseAssets.basePng}slide_2.png';
   static const String slide_3PNG = '${_AppBaseAssets.basePng}slide_3.png';
   static const String slide_4PNG = '${_AppBaseAssets.basePng}slide_3.png';
+  static const String questionMark = '${_AppBaseAssets.basePng}question_mark.png';
+  static const String totalEarning = '${_AppBaseAssets.basePng}total_earning.png';
+  static const String withdraw = '${_AppBaseAssets.basePng}withdraw.png';
+  static const String history = '${_AppBaseAssets.basePng}history.png';
 
 }
