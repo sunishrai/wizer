@@ -22,6 +22,19 @@ abstract class Routes {
   static const PROVIDER_PROFILE = _Paths.PROVIDER + _Paths.PROVIDER_PROFILE;
   static const PROVIDER_PAGE = _Paths.PROVIDER + _Paths.PROVIDER_PAGE;
   static const PROVIDER_EARNING = _Paths.PROVIDER + _Paths.PROVIDER_EARNING;
+  static const ORDER_DETAILS = _Paths.ORDER_DETAILS;
+  static const NOTIFICATION = _Paths.NOTIFICATION;
+  static const PRODUCT_DETAIL = _Paths.PRODUCT_DETAIL;
+  static const ORDER_COMPLAINTS = _Paths.ORDER_COMPLAINTS;
+  static const ORDER_SUCCESS = _Paths.ORDER_SUCCESS;
+  static const SAVED_LIST = _Paths.SAVED_LIST;
+  static const SAVED_LIST_DETAILS = _Paths.SAVED_LIST_DETAILS;
+  static const ACCOUNT = _Paths.ACCOUNT;
+  static const ACCOUNT_DELETE = _Paths.ACCOUNT_DELETE;
+  static const COMMUNITY_LEAGAL = _Paths.COMMUNITY_LEAGAL;
+  static const TERMS_SERVEICE = _Paths.TERMS_SERVEICE;
+  static const SELLER = _Paths.SELLER;
+  static const GIGS = _Paths.GIGS;
 }
 
 abstract class _Paths {
@@ -46,4 +59,17 @@ abstract class _Paths {
   static const PROVIDER = '';
   static const PROVIDER_PAGE = '/provider-page';
   static const PROVIDER_EARNING = '/provider-earning';
+  static const ORDER_DETAILS = '/order-details';
+  static const NOTIFICATION = '/notification';
+  static const PRODUCT_DETAIL = '/product-detail';
+  static const ORDER_COMPLAINTS = '/order-complaints';
+  static const ORDER_SUCCESS = '/order-success';
+  static const SAVED_LIST = '/saved-list';
+  static const SAVED_LIST_DETAILS = '/saved-list-details';
+  static const ACCOUNT = '/account';
+  static const ACCOUNT_DELETE = '/account-delete';
+  static const COMMUNITY_LEAGAL = '/community-leagal';
+  static const TERMS_SERVEICE = '/terms-serveice';
+  static const SELLER = '/seller';
+  static const GIGS = '/gigs';
 }

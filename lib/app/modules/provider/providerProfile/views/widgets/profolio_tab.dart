@@ -8,7 +8,7 @@ class ProviderPortfolioTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
+        const Text(
             "Please inform the freelancer of any preferences or concerns regarding the use of AI tools in the completion and/or delivery of your order."),
         Expanded(
           child: GridView.count(

@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 import '../controllers/logo_design_list_controller.dart';
 
-class LogoDesignListView extends GetView<LogoDesignListController> {
+class LogoDesignListView extends GetView  <LogoDesignListController> {
   const LogoDesignListView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {

@@ -21,15 +21,20 @@ class BaseWidget extends StatelessWidget {
           ? customAppBar ??
               AppBar(
                 centerTitle: true,
+                bottom:  PreferredSize(
+                  preferredSize: const Size.fromHeight(1),
+                  child: Divider(height: 0.8,color: Colors.grey.withOpacity(0.3),),
+                ),
                 leading: GestureDetector(
                     onTap: () => Get.back(), child: const Icon(Icons.arrow_back_ios, color: Colors.white)),
                 title: Text(
                   title!,
+                  style: const TextStyle(fontSize: 16),
                 ),
                 actions: [
                   customAction ?? const SizedBox.shrink(), // Use customAction here
                 ],
-                backgroundColor: AppColors.primary,
+
               )
           : customAppBar ??
               AppBar(

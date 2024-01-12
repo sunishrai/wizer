@@ -15,51 +15,51 @@ class ProviderProfileView extends GetView<ProviderProfileController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('ProviderProfileView'),
-          centerTitle: true,
-        ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const CircleNetworkImage(
-              imgPath: AppStrings.dummyProfileImage,
-              size: 56,
-            ),
-            const Text(
-              "Martin D",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            const Text(
-              "@matinD",
-              style: TextStyle(fontSize: 14),
-            ),
-            const Text(
-              "Envision Tech",
-              style: TextStyle(fontSize: 16),
-            ),
-            TabBar(
-              labelPadding: const EdgeInsets.all(8),
-              padding: const EdgeInsets.all(8),
-              labelColor: AppColors.primary,
-              indicatorSize: TabBarIndicatorSize.tab,
-              indicatorColor: AppColors.primary,
-              tabs: const [
-                Text("About"),
-                Text("Review"),
-                Text("Portfolio"),
-              ],
-              controller: controller.tabController,
-            ),
-            Expanded(
 
-              child: TabBarView(controller: controller.tabController, children: const [
-                ProviderProfileTab(),
-                ProviderReviewTab(),
-                ProviderPortfolioTab()
-              ]),
-            )
-          ],
+        body: Padding(
+          padding: const EdgeInsets.only(top: 56.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const CircleNetworkImage(
+                imgPath: AppStrings.dummyProfileImage,
+                size: 56,
+              ),
+              const Text(
+                "Martin D",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+              const Text(
+                "@matinD",
+                style: TextStyle(fontSize: 14),
+              ),
+              const Text(
+                "Envision Tech",
+                style: TextStyle(fontSize: 16),
+              ),
+              TabBar(
+                labelPadding: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
+                labelColor: AppColors.primary,
+                indicatorSize: TabBarIndicatorSize.tab,
+                indicatorColor: AppColors.primary,
+                tabs: const [
+                  Text("About"),
+                  Text("Review"),
+                  Text("Portfolio"),
+                ],
+                controller: controller.tabController,
+              ),
+              Expanded(
+
+                child: TabBarView(controller: controller.tabController, children: const [
+                  ProviderProfileTab(),
+                  ProviderReviewTab(),
+                  ProviderPortfolioTab()
+                ]),
+              )
+            ],
+          ),
         ));
   }
 }
