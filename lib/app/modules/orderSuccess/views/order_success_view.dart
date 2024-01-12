@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:wizer/core/theme/app_assets.dart';
+import 'package:wizer/core/theme/app_colors.dart';
 
 import '../controllers/order_success_controller.dart';
 
@@ -10,14 +12,36 @@ class OrderSuccessView extends GetView<OrderSuccessController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('OrderSuccessView'),
+        title: const Text('Order Successful'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'OrderSuccessView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+      body: Column(
+        children: [
+          Image.asset(AppAssets.thankyou),
+          const Text('Order booked successfully'),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text('View order list', style: TextStyle(color: AppColors.primary),),
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 14,vertical: 20),
+            height: 46,
+            width: double.infinity,
+            child: TextButton(
+              onPressed: (){ },
+              style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4),
+                          side: const BorderSide(color: Colors.white))),
+                  foregroundColor:
+                  MaterialStateProperty.all(const Color(0xffFFFFFF)),
+                  backgroundColor:
+                  MaterialStateProperty.all(const Color(0xff14AFB1))),
+              child: const Text('Go To Home'),
+            ),
+          ),
+        ],
       ),
     );
   }
