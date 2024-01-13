@@ -6,6 +6,7 @@ import 'package:wizer/core/components/widgets/base/base_button.dart';
 import 'package:wizer/core/theme/app_assets.dart';
 import 'package:wizer/core/theme/app_strings.dart';
 
+import '../../../../core/components/widgets/reusable/yes_no_bottomsheet.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../controllers/product_detail_controller.dart';
 
@@ -164,7 +165,7 @@ class ProductDetailView extends GetView<ProductDetailController> {
                         Get.bottomSheet(ColoredBox(
                           color: Colors.white,
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 10),
+                            padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisSize: MainAxisSize.min,
@@ -173,18 +174,34 @@ class ProductDetailView extends GetView<ProductDetailController> {
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text('Invite Friend'),
-                                    IconButton(onPressed: (){}, icon: Icon(Icons.close))
+                                    IconButton(onPressed: () {}, icon: Icon(Icons.close))
                                   ],
                                 ),
                                 Divider(),
                                 Center(child: Image.asset(AppAssets.invitePNG)),
-                                Center(child: Text("Share & get up to 100 AED off",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),)),
-                                Center(child: Text("Give friends a 10% discount up to 1000 AED off their first Wizer order",textAlign: TextAlign.center,)),
-                                BaseButton.primary(label: "Iinvite", onPressed: (){},width: double.infinity,)
+                                Center(
+                                    child: Text(
+                                  "Share & get up to 100 AED off",
+                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                                )),
+                                Center(
+                                    child: Text(
+                                  "Give friends a 10% discount up to 1000 AED off their first Wizer order",
+                                  textAlign: TextAlign.center,
+                                )),
+                                BaseButton.primary(
+                                  label: "Iinvite",
+                                  onPressed: () {},
+                                  width: double.infinity,
+                                )
                               ],
                             ),
                           ),
                         ));
+                        Get.bottomSheet(YesNoBottomSheet(
+                            title: "Delete Account",
+                            desc: "Are You sure you want to Delete this Account?",
+                            yesPressed: () {}));
                       },
                       width: double.infinity,
                     )

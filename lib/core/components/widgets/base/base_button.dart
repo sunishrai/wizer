@@ -85,45 +85,28 @@ class BaseButton extends StatelessWidget {
   }
 }
 
-class BaseBorderButton extends StatelessWidget {
-  const BaseBorderButton({super.key, required this.label, this.onPressed});
-  final String label;
-  final VoidCallback? onPressed;
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onPressed,
-      child: Container(
-        height: 50,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(4),
-            border: Border.all(color: AppColors.white, width: 2)),
-        alignment: Alignment.center,
-        child: Text(
-          label,
-          style: const TextStyle(color: AppColors.white),
-        ),
-      ),
-    );
-  }
-}
 
 class BaseButtonWithBorder extends StatelessWidget {
-  const BaseButtonWithBorder({super.key, required this.onTap, required this.label, this.isPrimmary = false});
+  const BaseButtonWithBorder({super.key, required this.onTap, required this.label, this.isPrimmary = false, this.width});
   final Function()? onTap;
   final String label;
   final bool isPrimmary;
+  final double? width;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+        alignment: Alignment.center,
+        width: width,
+        height: 44,
         clipBehavior: Clip.antiAlias,
         decoration: ShapeDecoration(
           color: isPrimmary ? AppColors.primary : Colors.white,
           shape: RoundedRectangleBorder(
-            side: const BorderSide(width: 1, color: Color(0xFF06345B)),
+            side: const BorderSide(width: 1.6, color: AppColors.primary),
             borderRadius: BorderRadius.circular(5),
           ),
         ),
