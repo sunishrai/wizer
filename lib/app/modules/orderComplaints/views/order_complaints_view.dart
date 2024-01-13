@@ -10,7 +10,7 @@ class OrderComplaintsView extends GetView<OrderComplaintsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('OrderComplaintsView'),
+        title: const Text('Complaints',style: TextStyle(fontSize: 20, color: Colors.red, fontWeight: FontWeight.bold),),
         centerTitle: true,
       ),
       body: const Center(

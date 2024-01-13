@@ -22,5 +22,6 @@ class AppAssets {
   static const String totalEarning = '${_AppBaseAssets.basePng}total_earning.png';
   static const String withdraw = '${_AppBaseAssets.basePng}withdraw.png';
   static const String history = '${_AppBaseAssets.basePng}history.png';
+  static const String thankyou = '${_AppBaseAssets.basePng}thankyou.png';
 
 }
