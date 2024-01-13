@@ -12,6 +12,7 @@ class AppAssets {
   static const String serviceSeekerSVG = '${_AppBaseAssets.baseSvg}seeker.svg';
   static const String serviceProviderSVG = '${_AppBaseAssets.baseSvg}provider.svg';
   static const String logoPNG = '${_AppBaseAssets.basePng}logo.png';
+  static const String invitePNG = '${_AppBaseAssets.basePng}invite.png';
   static const String logoWhitePNG = '${_AppBaseAssets.basePng}logo_white.png';
   static const String slide_1PNG = '${_AppBaseAssets.basePng}slide_1.png';
   static const String slide_2PNG = '${_AppBaseAssets.basePng}slide_2.png';
