@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
+import 'package:wizer/app/modules/otp/views/otp_view.dart';
 
 import '../controllers/forgot_password_controller.dart';
 
@@ -79,7 +80,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
               height: 46,
               width: double.infinity,
               child: TextButton(
-                onPressed: null,
+                onPressed: (){Get.to(OtpView());},
                 style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(

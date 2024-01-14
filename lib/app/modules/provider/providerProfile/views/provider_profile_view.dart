@@ -12,8 +12,10 @@ import '../controllers/provider_profile_controller.dart';
 
 class ProviderProfileView extends GetView<ProviderProfileController> {
   const ProviderProfileView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+    Get.lazyPut(()=>ProviderProfileController());
     return Scaffold(
 
         body: Padding(

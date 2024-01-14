@@ -15,7 +15,7 @@ class CommunityLeagalView extends GetView<CommunityLeagalController> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            // Handle back button
+            Get.back();
           },
         ),
         title: const Text('Community and legal'),

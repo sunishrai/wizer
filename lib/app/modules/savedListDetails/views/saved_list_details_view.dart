@@ -11,6 +11,7 @@ class SavedListDetailsView extends GetView<SavedListDetailsController> {
   const SavedListDetailsView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    Get.lazyPut(()=>SavedListDetailsController());
     return Scaffold(
       appBar: AppBar(
         title: const Text('UI Design Save List'),

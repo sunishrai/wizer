@@ -15,7 +15,6 @@ class ChatView extends GetView<ChatController> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Chat'),
-          elevation: 1,
           centerTitle: true,
         ),
         body: ListView.builder(

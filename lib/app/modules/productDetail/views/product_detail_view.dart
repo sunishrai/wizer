@@ -12,110 +12,126 @@ import '../controllers/product_detail_controller.dart';
 
 class ProductDetailView extends GetView<ProductDetailController> {
   const ProductDetailView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: const Text('Product Details'),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back, color: Colors.black),
+            onPressed: () {
+              Get.back();
+            },
+          ),
+          centerTitle: true,
+        ),
         body: SingleChildScrollView(
-      child: Column(
-        children: [
-          Stack(
+          child: Column(
             children: [
-              Image.network(AppStrings.dummyCardImage),
-              Positioned(
-                bottom: 0,
-                right: 0,
-                left: 0,
-                child: Container(
-                  decoration: const BoxDecoration(color: AppColors.subTextBgColor),
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                  child: Row(
-                    children: [
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(100),
-                          child: Image.network(
-                            AppStrings.dummyProfileImage,
-                            width: 30,
-                            height: 30,
-                            fit: BoxFit.cover,
-                          )),
-                      const SizedBox(
-                        width: 8,
-                      ),
-                      const Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Martin D"),
-                            Text(
-                              "Top Seller",
-                              style: TextStyle(color: AppColors.desingntionColor, fontSize: 10),
+              Stack(
+                children: [
+                  Image.network(AppStrings.dummyCardImage),
+                  Positioned(
+                    bottom: 0,
+                    right: 0,
+                    left: 0,
+                    child: Container(
+                      decoration:
+                          const BoxDecoration(color: AppColors.subTextBgColor),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 12),
+                      child: Row(
+                        children: [
+                          ClipRRect(
+                              borderRadius: BorderRadius.circular(100),
+                              child: Image.network(
+                                AppStrings.dummyProfileImage,
+                                width: 30,
+                                height: 30,
+                                fit: BoxFit.cover,
+                              )),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Martin D"),
+                                Text(
+                                  "Top Seller",
+                                  style: TextStyle(
+                                      color: AppColors.desingntionColor,
+                                      fontSize: 10),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                          Chip(
+                            labelPadding: EdgeInsets.zero,
+                            padding: const EdgeInsets.only(right: 8),
+                            label: const Text(
+                              'Chat',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            backgroundColor: Colors.black,
+                            avatar: const Icon(Icons.chat),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(24)),
+                          ),
+                          4.w,
+                          const Icon(
+                            Icons.favorite,
+                            color: Colors.red,
+                            size: 32,
+                          ),
+                          const Icon(
+                            Icons.keyboard_arrow_down_sharp,
+                            size: 32,
+                          ),
+                        ],
                       ),
-                      Chip(
-                        labelPadding: EdgeInsets.zero,
-                        padding: const EdgeInsets.only(right: 8),
-                        label: const Text(
-                          'Chat',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        backgroundColor: Colors.black,
-                        avatar: const Icon(Icons.chat),
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-                      ),
-                      4.w,
-                      const Icon(
-                        Icons.favorite,
-                        color: Colors.red,
-                        size: 32,
-                      ),
-                      const Icon(
-                        Icons.keyboard_arrow_down_sharp,
-                        size: 32,
-                      ),
-                    ],
+                    ),
+                  )
+                ],
+              ),
+              16.h,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "I will do SASS design web app UI UX and desktop application design in Figma",
+                    style: TextStyle(fontSize: 24),
                   ),
-                ),
+                  8.h,
+                  const Text(
+                    "If you are looking for a SaaS UX UI, Web App Design, and Desktop application you are at the right place. I will turn your imagination into reality according to the modern UX/UI standards which will be minimalistic and engaging.",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  ),
+                  9.h,
+                  const Text(
+                    "Services:",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  4.h,
+                  const Text(" \u2022 SaaS UI UX"),
+                  const Text(" \u2022 SaaS UI UX"),
+                  const Text(" \u2022 SaaS UI UX"),
+                  const Text(" \u2022 SaaS UI UX"),
+                  Container(
+                    color: Colors.grey,
+                    width: double.infinity,
+                    height: 4,
+                  ),
+                  _tabSection(context),
+                  100.h,
+                  const Text("My Portfolio")
+                ],
               )
             ],
           ),
-          16.h,
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                "I will do SASS design web app UI UX and desktop application design in Figma",
-                style: TextStyle(fontSize: 24),
-              ),
-              8.h,
-              const Text(
-                "If you are looking for a SaaS UX UI, Web App Design, and Desktop application you are at the right place. I will turn your imagination into reality according to the modern UX/UI standards which will be minimalistic and engaging.",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-              ),
-              9.h,
-              const Text(
-                "Services:",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              4.h,
-              const Text(" \u2022 SaaS UI UX"),
-              const Text(" \u2022 SaaS UI UX"),
-              const Text(" \u2022 SaaS UI UX"),
-              const Text(" \u2022 SaaS UI UX"),
-              Container(
-                color: Colors.grey,
-                width: double.infinity,
-                height: 4,
-              ),
-              _tabSection(context),
-              100.h,
-              const Text("My Portfolio")
-            ],
-          )
-        ],
-      ),
-    ));
+        ));
   }
 
   Widget _tabSection(BuildContext context) {
@@ -142,10 +158,12 @@ class ProductDetailView extends GetView<ProductDetailController> {
                   children: [
                     const Text(
                       "Basic Package",
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
                     ),
                     4.h,
-                    const Text("Single Screen Design in Figma with source file and assets unlimited revisions"),
+                    const Text(
+                        "Single Screen Design in Figma with source file and assets unlimited revisions"),
                     8.h,
                     titleTrailing(title: 'Delivery Date', count: 38),
                     titleTrailing(title: 'Delivery Date', count: 38),
@@ -165,16 +183,20 @@ class ProductDetailView extends GetView<ProductDetailController> {
                         Get.bottomSheet(ColoredBox(
                           color: Colors.white,
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 10.0, horizontal: 10),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text('Invite Friend'),
-                                    IconButton(onPressed: () {}, icon: Icon(Icons.close))
+                                    IconButton(
+                                        onPressed: () {},
+                                        icon: Icon(Icons.close))
                                   ],
                                 ),
                                 Divider(),
@@ -182,7 +204,9 @@ class ProductDetailView extends GetView<ProductDetailController> {
                                 Center(
                                     child: Text(
                                   "Share & get up to 100 AED off",
-                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18),
                                 )),
                                 Center(
                                     child: Text(
@@ -200,7 +224,8 @@ class ProductDetailView extends GetView<ProductDetailController> {
                         ));
                         Get.bottomSheet(YesNoBottomSheet(
                             title: "Delete Account",
-                            desc: "Are You sure you want to Delete this Account?",
+                            desc:
+                                "Are You sure you want to Delete this Account?",
                             yesPressed: () {}));
                       },
                       width: double.infinity,

@@ -12,6 +12,11 @@ class NotificationView extends GetView<NotificationController> {
   Widget build(BuildContext context) {
     return BaseWidget(
       title: "Notification",
+      customAppBar: AppBar(
+        elevation: 0, // Removes the shadow under the app bar
+        backgroundColor: Colors.transparent, // Makes the app bar transparent
+        iconTheme: const IconThemeData(color: Colors.black), // Changes the app bar icon color
+      ),
       child: ListView.builder(
           itemCount: 7,
           itemBuilder: (_, i) => Padding(

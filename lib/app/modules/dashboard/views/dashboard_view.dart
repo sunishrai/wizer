@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:wizer/app/modules/onboarding/views/onboarding_view.dart';
 import 'package:wizer/core/theme/app_colors.dart';
 
 import '../controllers/dashboard_controller.dart';
@@ -33,6 +34,8 @@ class DashboardView extends GetView<DashboardController> {
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(36), color: AppColors.primary),
                       child: const Icon(Icons.mail)),
                 ),
+
+                if(isSeeker)
                 BottomNavigationBarItem(
                   icon: const Icon(Icons.search),
                   label: "",
@@ -41,6 +44,7 @@ class DashboardView extends GetView<DashboardController> {
                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(36), color: AppColors.primary),
                       child: const Icon(Icons.search)),
                 ),
+
                 BottomNavigationBarItem(
                   icon: const Icon(Icons.bookmark),
                   label: "",
@@ -59,6 +63,6 @@ class DashboardView extends GetView<DashboardController> {
                 ),
               ],
             )),
-        body: Obx(() => controller.pages[controller.index.value]));
+        body: Obx(() => isSeeker? controller.pages[controller.index.value] : controller.providerPages[controller.index.value]));
   }
 }

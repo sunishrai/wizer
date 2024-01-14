@@ -1,6 +1,10 @@
+import 'package:country_pickers/country.dart';
+import 'package:country_pickers/country_picker_dropdown.dart';
+import 'package:country_pickers/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:wizer/app/modules/otp/views/otp_view.dart';
 
 import '../controllers/signup_controller.dart';
 
@@ -19,7 +23,7 @@ class SignUpView extends GetView<SignupController> {
               padding: EdgeInsets.only(top: 14),
               child: Center(
                 child:
-                Image(image: AssetImage('assets/images/splash_logo.png')),
+                    Image(image: AssetImage('assets/images/splash_logo.png')),
               ),
             ),
             const Padding(
@@ -60,13 +64,47 @@ class SignUpView extends GetView<SignupController> {
               ),
             ),
 
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 14, vertical: 08),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: 'Country',
-                ),
+            // const Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: 14, vertical: 08),
+            //   child: TextField(
+            //     decoration: InputDecoration(
+            //       border: OutlineInputBorder(),
+            //       hintText: 'Country',
+            //     ),
+            //   ),
+            // ),
+
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 14, vertical: 08),
+              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                borderRadius: BorderRadius.circular(5)
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  CountryPickerDropdown(
+                    initialValue: 'in',
+                    itemBuilder: _buildDropdownItem,
+                    onValuePicked: (Country country) {
+                      print("${country.name}");
+                    },
+                  ),
+                  Expanded(
+                    child: TextField(
+                      keyboardType: TextInputType.phone,
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Phone Number",
+                      ),
+                      onChanged: (value) {
+                        // this.phoneNo=value;
+                        print(value);
+                      },
+                    ),
+                  ),
+                ],
               ),
             ),
 
@@ -97,8 +135,9 @@ class SignUpView extends GetView<SignupController> {
                   child: CheckboxListTile(
                     title: const Text("Terms and Conditions"),
                     value: true,
-                    onChanged: (newValue) {  },
-                    controlAffinity: ListTileControlAffinity.leading,  //  <-- leading Checkbox
+                    onChanged: (newValue) {},
+                    controlAffinity: ListTileControlAffinity
+                        .leading, //  <-- leading Checkbox
                   ),
                 ),
                 const Padding(
@@ -115,16 +154,16 @@ class SignUpView extends GetView<SignupController> {
               height: 46,
               width: double.infinity,
               child: TextButton(
-                onPressed: null,
+                onPressed: (){Get.to(OtpView());},
                 style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4),
                             side: const BorderSide(color: Colors.white))),
                     foregroundColor:
-                    MaterialStateProperty.all(const Color(0xffFFFFFF)),
+                        MaterialStateProperty.all(const Color(0xffFFFFFF)),
                     backgroundColor:
-                    MaterialStateProperty.all(const Color(0xff14AFB1))),
+                        MaterialStateProperty.all(const Color(0xff14AFB1))),
                 child: const Text('Login'),
               ),
             ),
@@ -149,9 +188,9 @@ class SignUpView extends GetView<SignupController> {
                             borderRadius: BorderRadius.circular(4),
                             side: const BorderSide(color: Colors.white))),
                     foregroundColor:
-                    MaterialStateProperty.all(const Color(0xffFFFFFF)),
+                        MaterialStateProperty.all(const Color(0xffFFFFFF)),
                     backgroundColor:
-                    MaterialStateProperty.all(const Color(0xff000000))),
+                        MaterialStateProperty.all(const Color(0xff000000))),
                 icon: const Icon(
                   // <-- Icon
                   Icons.apple,
@@ -171,7 +210,7 @@ class SignUpView extends GetView<SignupController> {
                         onPressed: () {},
                         style: ButtonStyle(
                           shape: MaterialStateProperty.all<
-                              RoundedRectangleBorder>(
+                                  RoundedRectangleBorder>(
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(4),
                                   side: const BorderSide(color: Colors.black))),
@@ -197,7 +236,7 @@ class SignUpView extends GetView<SignupController> {
                         onPressed: () {},
                         style: ButtonStyle(
                           shape: MaterialStateProperty.all<
-                              RoundedRectangleBorder>(
+                                  RoundedRectangleBorder>(
                               RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(4),
                                   side: const BorderSide(color: Colors.black))),
@@ -219,3 +258,15 @@ class SignUpView extends GetView<SignupController> {
     );
   }
 }
+
+Widget _buildDropdownItem(Country country) => Container(
+      child: Row(
+        children: <Widget>[
+          CountryPickerUtils.getDefaultFlagImage(country),
+          SizedBox(
+            width: 8.0,
+          ),
+          Text("+${country.phoneCode}(${country.isoCode})"),
+        ],
+      ),
+    );

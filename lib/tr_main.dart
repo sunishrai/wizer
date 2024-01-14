@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:get/get.dart';
 
 import 'core/theme/app_colors.dart';
 
@@ -30,7 +31,7 @@ class OrderDetailPage extends StatelessWidget {
         centerTitle: true,
         leading:  IconButton(
           icon: Icon(Icons.arrow_back),
-          onPressed: () {},
+          onPressed: () {Get.back();},
         ),
 
         actions: [

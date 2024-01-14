@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:wizer/app/modules/provider/providerEarning/views/provider_earning_view.dart';
 import 'package:wizer/core/theme/app_strings.dart';
 
 import '../../../../../core/components/widgets/reusable/circle_network_img.dart';
@@ -15,12 +16,6 @@ class ProviderPageView extends GetView<ProviderPageController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            // Handle back button
-          },
-        ),
         centerTitle: true,
         backgroundColor: Colors.black,
       ),
@@ -264,10 +259,13 @@ class ProviderPageView extends GetView<ProviderPageController> {
                     "Earnings",
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,color: Colors.black),
                   ),
-                  Text(
-                    "View Details",
-                    style:
-                    TextStyle(fontSize: 14, color: AppColors.primary),
+                  InkWell(
+                    onTap: (){Get.to(ProviderEarningView());},
+                    child: Text(
+                      "View Details",
+                      style:
+                      TextStyle(fontSize: 14, color: AppColors.primary),
+                    ),
                   ),
                 ],
               ),

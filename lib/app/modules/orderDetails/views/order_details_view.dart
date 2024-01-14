@@ -17,7 +17,7 @@ class OrderDetailsView extends GetView<OrderDetailsController> {
         centerTitle: true,
         leading:  IconButton(
           icon: Icon(Icons.arrow_back),
-          onPressed: () {},
+          onPressed: () {Get.back();},
         ),
 
         actions: [

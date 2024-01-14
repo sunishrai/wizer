@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:wizer/app/modules/orderSuccess/views/order_success_view.dart';
 import 'package:wizer/core/theme/app_assets.dart';
 import 'package:wizer/core/theme/app_colors.dart';
 
@@ -16,7 +17,7 @@ class ProviderEarningView extends GetView<ProviderEarningController> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            // Handle back button
+            Get.back();
           },
         ),
         title: const Text(
@@ -72,20 +73,23 @@ class ProviderEarningView extends GetView<ProviderEarningController> {
                     children: [
                       Column(
                         children: [
-                          Container(
-                            width: 50,
-                            height: 50,
-                            padding: const EdgeInsets.all(5),
-                            margin: const EdgeInsets.all(10),
-                            decoration: const BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                color: Colors.white,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(5))),
-                            child: Image.asset(
-                              AppAssets.withdraw,
-                              width: 30,
-                              height: 30,
+                          InkWell(
+                            onTap:(){ Get.to(OrderSuccessView());},
+                            child: Container(
+                              width: 50,
+                              height: 50,
+                              padding: const EdgeInsets.all(5),
+                              margin: const EdgeInsets.all(10),
+                              decoration: const BoxDecoration(
+                                  shape: BoxShape.rectangle,
+                                  color: Colors.white,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(5))),
+                              child: Image.asset(
+                                AppAssets.withdraw,
+                                width: 30,
+                                height: 30,
+                              ),
                             ),
                           ),
                           const Text(
