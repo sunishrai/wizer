@@ -16,6 +16,7 @@ class ChatView extends GetView<ChatController> {
         appBar: AppBar(
           title: const Text('Chat'),
           centerTitle: true,
+          automaticallyImplyLeading: false,
         ),
         body: ListView.builder(
             itemBuilder: (_, i) => Padding(

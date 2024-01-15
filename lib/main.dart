@@ -9,6 +9,7 @@ void main() {
     GetMaterialApp(
       title: "Application",
       initialRoute: AppPages.INITIAL,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Raleway'),
       getPages: AppPages.routes,
     ),

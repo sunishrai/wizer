@@ -14,6 +14,7 @@ class OrdersView extends GetView<OrdersController> {
         appBar: AppBar(
           title: const Text('Orders'),
           centerTitle: true,
+          automaticallyImplyLeading: false,
         ),
         body: ListView.builder(
           itemBuilder: (_, i) => Row(

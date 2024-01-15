@@ -22,12 +22,12 @@ class ProfileView extends GetView<ProfileController> {
         elevation: 0, // Removes the shadow under the app bar
         backgroundColor: Colors.transparent, // Makes the app bar transparent
         // iconTheme: const IconThemeData(color: Colors.black), // Changes the app bar icon color
-
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
-            icon: const Icon(Icons.notifications_outlined),
+            icon: const Icon(Icons.notifications_outlined, size: 30,),
             onPressed: () {
-              Get.to(() => NotificationView());
+              Get.to(() => const NotificationView());
             },
           ),
         ],
