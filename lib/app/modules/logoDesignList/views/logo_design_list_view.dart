@@ -14,7 +14,7 @@ class LogoDesignListView extends GetView  <LogoDesignListController> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () {
-            // Handle back button
+            Get.back();
           },
         ),
         title: const Text('Logo Design', style: TextStyle(color: Colors.black)),

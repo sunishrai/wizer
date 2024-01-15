@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:wizer/app/modules/notification/views/notification_view.dart';
+import 'package:wizer/app/modules/orderComplaints/views/order_complaints_view.dart';
+import 'package:wizer/app/modules/orderSuccess/views/order_success_view.dart';
 
 import '../../../../core/components/widgets/reusable/name_designation_rating_card.dart';
 import '../../../../core/theme/app_colors.dart';
@@ -13,20 +16,33 @@ class OrderDetailsView extends GetView<OrderDetailsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Order List',style: TextStyle(fontSize: 18),),
-        centerTitle: true,
+        title: const Text('Order List',style: TextStyle(fontSize: 18),),
         leading:  IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {Get.back();},
         ),
 
         actions: [
           IconButton(
             icon: Text('Complaint',style: TextStyle(color: Colors.red),),
-            onPressed: () {},
+            onPressed: () {
+              Get.to(() => OrderComplaintsView());
+            },
           ),
         ],
       ),
+      // bottomNavigationBar: Container(
+      //   child: Row(
+      //     children: [
+      //       Column(
+      //         children: [
+      //           Text('Total Cost',style: TextStyle(fontSize: 18),),
+      //           Text('700 AEDt',style: TextStyle(fontSize: 18),),
+      //         ],
+      //       )
+      //     ],
+      //   ),
+      // ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),

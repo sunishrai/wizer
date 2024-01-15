@@ -17,7 +17,12 @@ class ProviderProfileView extends GetView<ProviderProfileController> {
   Widget build(BuildContext context) {
     Get.lazyPut(()=>ProviderProfileController());
     return Scaffold(
-
+      appBar: AppBar(
+        leading:  IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {Get.back();},
+        ),
+      ),
         body: Padding(
           padding: const EdgeInsets.only(top: 56.0),
           child: Column(

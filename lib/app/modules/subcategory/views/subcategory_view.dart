@@ -85,12 +85,10 @@ List<Widget> buildCategorySection(String title, List<String> items) {
     ),
     ...items.map(
           (item) => ListTile(
-        title: InkWell(
-            onTap: (){Get.to(LogoDesignListView());},
-            child: Text(item)),
+        title: Text(item),
         trailing: Icon(Icons.chevron_right),
         onTap: () {
-          // Handle item tap
+          Get.to(() => LogoDesignListView());
         },
       ),
     ),

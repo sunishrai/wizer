@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:wizer/app/modules/bookmark/views/bookmark_view.dart';
+import 'package:wizer/app/modules/dashboard/views/dashboard_view.dart';
+import 'package:wizer/app/modules/orders/views/orders_view.dart';
 import 'package:wizer/core/theme/app_assets.dart';
 import 'package:wizer/core/theme/app_colors.dart';
 
@@ -19,16 +22,21 @@ class OrderSuccessView extends GetView<OrderSuccessController> {
         children: [
           Image.asset(AppAssets.thankyou),
           const Text('Order booked successfully'),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text('View order list', style: TextStyle(color: AppColors.primary),),
+          InkWell(
+            onTap: () {Get.to(() => OrdersView());},
+            child: const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text('View order list', style: TextStyle(color: AppColors.primary, fontWeight: FontWeight.bold),),
+            ),
           ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 14,vertical: 20),
             height: 46,
             width: double.infinity,
             child: TextButton(
-              onPressed: (){ },
+              onPressed: (){
+                Get.to(() => DashboardView());
+              },
               style: ButtonStyle(
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(

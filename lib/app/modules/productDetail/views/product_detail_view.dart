@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:wizer/app/modules/orderReview/views/order_review_view.dart';
+import 'package:wizer/app/modules/orderSuccess/views/order_success_view.dart';
 import 'package:wizer/core/components/extentions/sizedbox.ext.dart';
 import 'package:wizer/core/components/widgets/base/base_button.dart';
 import 'package:wizer/core/theme/app_assets.dart';
@@ -180,53 +182,7 @@ class ProductDetailView extends GetView<ProductDetailController> {
                     BaseButton.primary(
                       label: "Continue (65 AED)",
                       onPressed: () {
-                        Get.bottomSheet(ColoredBox(
-                          color: Colors.white,
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                vertical: 10.0, horizontal: 10),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text('Invite Friend'),
-                                    IconButton(
-                                        onPressed: () {},
-                                        icon: Icon(Icons.close))
-                                  ],
-                                ),
-                                Divider(),
-                                Center(child: Image.asset(AppAssets.invitePNG)),
-                                Center(
-                                    child: Text(
-                                  "Share & get up to 100 AED off",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18),
-                                )),
-                                Center(
-                                    child: Text(
-                                  "Give friends a 10% discount up to 1000 AED off their first Wizer order",
-                                  textAlign: TextAlign.center,
-                                )),
-                                BaseButton.primary(
-                                  label: "Iinvite",
-                                  onPressed: () {},
-                                  width: double.infinity,
-                                )
-                              ],
-                            ),
-                          ),
-                        ));
-                        Get.bottomSheet(YesNoBottomSheet(
-                            title: "Delete Account",
-                            desc:
-                                "Are You sure you want to Delete this Account?",
-                            yesPressed: () {}));
+                        Get.to(OrderReviewView());
                       },
                       width: double.infinity,
                     )

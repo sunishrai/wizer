@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wizer/app/modules/home/views/widgets/featured_card.dart';
 import 'package:wizer/app/modules/home/views/widgets/section_view.dart';
+import 'package:wizer/app/modules/productDetail/views/product_detail_view.dart';
 import 'package:wizer/core/theme/app_assets.dart';
 import 'package:wizer/core/theme/app_colors.dart';
 
@@ -80,80 +81,83 @@ class HomeView extends GetView<HomeController> {
                               border: Border.all(color: Colors.grey.withOpacity(0.4)),
                               borderRadius: BorderRadius.circular(16),
                               color: AppColors.cardWhite),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ClipRRect(
-                                borderRadius: BorderRadius.circular(16),
-                                child: Image.network(
-                                  "https://img.freepik.com/free-photo/space-background-realistic-starry-night-cosmos-shining-stars-milky-way-stardust-color-galaxy_1258-154643.jpg",
-                                  height: 200,
+                          child: InkWell(
+                            onTap: (){Get.to(() => ProductDetailView());},
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(16),
+                                  child: Image.network(
+                                    "https://img.freepik.com/free-photo/space-background-realistic-starry-night-cosmos-shining-stars-milky-way-stardust-color-galaxy_1258-154643.jpg",
+                                    height: 200,
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Row(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        ClipRRect(
-                                            borderRadius: BorderRadius.circular(100),
-                                            child: Image.network(
-                                              "https://pixlr.com/images/index/ai-image-generator-two.webp",
-                                              width: 30,
-                                              height: 30,
-                                              fit: BoxFit.cover,
-                                            )),
-                                        const SizedBox(
-                                          width: 8,
-                                        ),
-                                        const Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            Text("Martina D"),
-                                            Text(
-                                              "Martina D",
-                                              style: TextStyle(color: Colors.amber, fontSize: 10),
-                                            ),
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                    const SizedBox(
-                                      width: 160,
-                                    ),
-                                    const Icon(Icons.favorite_border)
-                                  ],
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Row(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          ClipRRect(
+                                              borderRadius: BorderRadius.circular(100),
+                                              child: Image.network(
+                                                "https://pixlr.com/images/index/ai-image-generator-two.webp",
+                                                width: 30,
+                                                height: 30,
+                                                fit: BoxFit.cover,
+                                              )),
+                                          const SizedBox(
+                                            width: 8,
+                                          ),
+                                          const Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Text("Martina D"),
+                                              Text(
+                                                "Martina D",
+                                                style: TextStyle(color: Colors.amber, fontSize: 10),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        width: 160,
+                                      ),
+                                      const Icon(Icons.favorite_border)
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              const Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Row(
-                                  children: [
-                                    Text("From"),
-                                    SizedBox(
-                                      width: 8,
-                                    ),
-                                    Text(
-                                      "50 AED",
-                                      style: TextStyle(fontWeight: FontWeight.bold),
-                                    ),
-                                    SizedBox(
-                                      width: 90,
-                                    ),
-                                    Text("(5.5728)  "),
-                                    Text(
-                                      '5.9',
-                                      style: TextStyle(color: Colors.yellow),
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: Colors.yellow,
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
+                                const Padding(
+                                  padding: EdgeInsets.all(8.0),
+                                  child: Row(
+                                    children: [
+                                      Text("From"),
+                                      SizedBox(
+                                        width: 8,
+                                      ),
+                                      Text(
+                                        "50 AED",
+                                        style: TextStyle(fontWeight: FontWeight.bold),
+                                      ),
+                                      SizedBox(
+                                        width: 90,
+                                      ),
+                                      Text("(5.5728)  "),
+                                      Text(
+                                        '5.9',
+                                        style: TextStyle(color: Colors.yellow),
+                                      ),
+                                      Icon(
+                                        Icons.star,
+                                        color: Colors.yellow,
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         )),
               ),

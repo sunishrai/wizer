@@ -29,7 +29,7 @@ class SellerView extends GetView<SellerController> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      margin: EdgeInsets.only(top: 24),
+                      padding: const EdgeInsets.only(top: 10),
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(100),
                           child: Image.network(
@@ -40,7 +40,7 @@ class SellerView extends GetView<SellerController> {
                           )),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: 10),
+                      margin: EdgeInsets.only(top: 8),
                       child: const Text(
                         "Martina D",
                         style: TextStyle(

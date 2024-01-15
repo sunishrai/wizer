@@ -52,7 +52,7 @@ class OnboardingView extends GetView<OnboardingController> {
                   Get.to(const SignUpView());
                 },
                 child: Container(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       color: Colors.white),
@@ -74,7 +74,7 @@ class OnboardingView extends GetView<OnboardingController> {
                   Get.to(SignUpView());
                 },
                 child: Container(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
                       color: Colors.white),

@@ -35,6 +35,7 @@ abstract class Routes {
   static const TERMS_SERVEICE = _Paths.TERMS_SERVEICE;
   static const SELLER = _Paths.SELLER;
   static const GIGS = _Paths.GIGS;
+  static const ORDER_REVIEW = _Paths.ORDER_REVIEW;
 }
 
 abstract class _Paths {
@@ -72,4 +73,5 @@ abstract class _Paths {
   static const TERMS_SERVEICE = '/terms-serveice';
   static const SELLER = '/seller';
   static const GIGS = '/gigs';
+  static const ORDER_REVIEW = '/order-review';
 }

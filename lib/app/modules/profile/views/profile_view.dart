@@ -8,7 +8,8 @@ import 'package:wizer/app/modules/notification/views/notification_view.dart';
 import 'package:wizer/app/modules/provider/providerEarning/views/provider_earning_view.dart';
 import 'package:wizer/app/modules/provider/providerProfile/views/provider_profile_view.dart';
 import 'package:wizer/app/modules/savedList/views/saved_list_view.dart';
-import 'package:wizer/app/modules/termsServeice/views/terms_serveice_view.dart';
+import 'package:wizer/core/components/widgets/base/base_button.dart';
+import 'package:wizer/core/theme/app_assets.dart';
 
 import '../controllers/profile_controller.dart';
 
@@ -20,7 +21,7 @@ class ProfileView extends GetView<ProfileController> {
       appBar: AppBar(
         elevation: 0, // Removes the shadow under the app bar
         backgroundColor: Colors.transparent, // Makes the app bar transparent
-        iconTheme: const IconThemeData(color: Colors.black), // Changes the app bar icon color
+        // iconTheme: const IconThemeData(color: Colors.black), // Changes the app bar icon color
 
         actions: [
           IconButton(
@@ -71,7 +72,48 @@ class ProfileView extends GetView<ProfileController> {
                   title: const Text('Invite Friends'),
                   trailing: const Icon(Icons.chevron_right),
                   onTap: () {
-                    Get.to(() => ProviderEarningView());
+                    Get.bottomSheet(ColoredBox(
+                      color: Colors.white,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10.0, horizontal: 10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Row(
+                              mainAxisAlignment:
+                              MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text('Invite Friend'),
+                                IconButton(
+                                    onPressed: () {Get.back();},
+                                    icon: Icon(Icons.close))
+                              ],
+                            ),
+                            Divider(),
+                            Center(child: Image.asset(AppAssets.invitePNG)),
+                            Center(
+                                child: Text(
+                                  "Share & get up to 100 AED off",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18),
+                                )),
+                            Center(
+                                child: Text(
+                                  "Give friends a 10% discount up to 1000 AED off their first Wizer order",
+                                  textAlign: TextAlign.center,
+                                )),
+                            BaseButton.primary(
+                              label: "Iinvite",
+                              onPressed: () {Get.back();},
+                              width: double.infinity,
+                            )
+                          ],
+                        ),
+                      ),
+                    ));
                   },
                 ),
                 ListTile(
@@ -84,7 +126,7 @@ class ProfileView extends GetView<ProfileController> {
                   leading: const Icon(Icons.backpack),
                   title: const Text('Add Package'),
                   trailing: const Icon(Icons.chevron_right),
-                  onTap: () { Get.to(() => ProviderProfileView());},
+                  onTap: () { },
                 ),
                 const Padding(
                   padding: EdgeInsets.all(8.0),

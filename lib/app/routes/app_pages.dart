@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:wizer/app/modules/orderReview/bindings/order_review_binding.dart';
+import 'package:wizer/app/modules/orderReview/views/order_review_view.dart';
 
 import '../modules/account/bindings/account_binding.dart';
 import '../modules/account/views/account_view.dart';
@@ -232,6 +234,11 @@ class AppPages {
       name: _Paths.GIGS,
       page: () => const GigsView(),
       binding: GigsBinding(),
+    ),
+    GetPage(
+      name: _Paths.ORDER_REVIEW,
+      page: () => const OrderReviewView(),
+      binding: OrderReviewBinding(),
     ),
   ];
 }

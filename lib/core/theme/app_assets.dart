@@ -23,5 +23,9 @@ class AppAssets {
   static const String withdraw = '${_AppBaseAssets.basePng}withdraw.png';
   static const String history = '${_AppBaseAssets.basePng}history.png';
   static const String thankyou = '${_AppBaseAssets.basePng}thankyou.png';
+  static const String creditCard = '${_AppBaseAssets.basePng}credit_card.png';
+  static const String payPal = '${_AppBaseAssets.basePng}pay_pal.png';
+  static const String tick = '${_AppBaseAssets.basePng}tick.png';
+  static const String success = '${_AppBaseAssets.basePng}success.png';
 
 }

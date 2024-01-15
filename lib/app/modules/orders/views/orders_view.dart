@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:wizer/app/modules/orderDetails/views/order_details_view.dart';
 import 'package:wizer/core/theme/app_colors.dart';
-import 'package:wizer/tr_main.dart';
 
 import '../controllers/orders_controller.dart';
 
@@ -20,7 +20,7 @@ class OrdersView extends GetView<OrdersController> {
             children: [
               Expanded(
                 child: InkWell(
-                  onTap: (){Get.to(OrderDetailPage());},
+                  onTap: (){Get.to(OrderDetailsView());},
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 24,
